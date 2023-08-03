@@ -41,14 +41,14 @@ class Notes:
 
     def __init__(self):
         self.notes = []
-        self.note_id = 1
+        self.note_id = 0
 
     def add(self):
         self.note_id += 1
         tittle = input(text.tittle_input)
         message = input(text.note_input)
         timestamp = datetime.datetime.now().isoformat()
-        note = {"note_id": self.note_id, "tittle": tittle, "text": message, "data": timestamp}
+        note = {"note_id": str(self.note_id), "tittle": tittle, "text": message, "data": timestamp}
         self.notes.append(note)
 
     def delete(self):
@@ -128,5 +128,3 @@ class Notes:
                 self.notes = json.load(file)
         except FileNotFoundError:
             self.notes = []
-
-

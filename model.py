@@ -1,5 +1,7 @@
 import json
 import datetime
+import locale
+
 import text
 
 NOTES_FILE = "notes.json"
@@ -68,10 +70,8 @@ class Notes:
             start_datetime = datetime.datetime.strptime(start_date, "%d.%m.%Y")
             end_datetime = datetime.datetime.strptime(end_date, "%d.%m.%Y")
 
-            filtered_notes = [note for note in self.get_note()
-                              if start_datetime <=
-                              datetime.datetime.strptime(note["data"],
-                                                         "%Y-%m-%dT%H:%M:%S") <= end_datetime]
+            filtered_notes = [note for note in self.get_note() if start_datetime
+                              <= datetime.datetime.strptime(note["data"], "%Y-%m-%dT%H:%M:%S") <= end_datetime]
             if filtered_notes:
                 for note in filtered_notes:
                     print(f"ID:{note['note_id']}")

@@ -7,9 +7,6 @@ def main_menu() -> int:
         choice = input(text.choice_input)
         if choice.isdigit() and 0 < int(choice) < 7:
             return int(choice)
+        else:
+            print(text.choice_mistake)
 
-
-def print_message(message: str):
-    print("\n" + "=" * len(message))
-    print(message)
-    print("=" * len(message) + "\n")

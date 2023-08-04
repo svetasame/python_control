@@ -22,3 +22,4 @@ def start():
             my_notes.filter_date()
         elif choice == 6:
             break
+
